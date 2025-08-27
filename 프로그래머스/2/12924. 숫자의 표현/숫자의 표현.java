@@ -1,0 +1,23 @@
+class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        int sum = 0;
+        int count = 1; // n 자신 
+        
+        for(int i = 1; i < n; i++){
+            sum = 0;
+            for(int j = i; j < n; j++){
+                sum += j;
+                
+                if(sum == n){
+                    count++;
+                    break;
+                } else if(sum > n){
+                    break;
+                }
+            }
+        }
+        
+        return count;
+    }
+}
