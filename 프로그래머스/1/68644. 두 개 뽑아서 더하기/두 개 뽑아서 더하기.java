@@ -1,0 +1,17 @@
+import java.util.*;
+class Solution {
+    public int[] solution(int[] numbers) {
+        List<Integer> list = new ArrayList<>();
+        
+        for(int i = 0; i < numbers.length; i++){
+            for(int j = 0; j < numbers.length; j++){
+                if(j == i) continue;
+                list.add(numbers[i] + numbers[j]);
+            }
+        }
+        int[] arr = list.stream().distinct().mapToInt(Integer::intValue).toArray();
+
+        Arrays.sort(arr);
+        return arr;
+    }
+}
